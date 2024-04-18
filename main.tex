@@ -1,0 +1,100 @@
+\documentclass{tnreport}
+%\documentclass[stage1a]{tnreport} % If you are in 1nd year
+%\documentclass[stage2a]{tnreport}
+\usepackage{glossaries}
+\usepackage{float}
+%\documentclass[confidential]{tnreport} % If you are writing confidential report
+%\documentclass[english]{tnreport} % If you are writing your report in english
+%\documentclass[contratpro]{tnreport} % If you are in contrat pro
+
+\def\reportTitle{TitreMémoire} % Titre du mémoire
+\def\reportLongTitle{Long TitreMémoire} % Titre plus long du mémoire
+
+\def\reportAuthor{AuthorName}
+\def\reportAuthorEmail{\email{AuthorEmail}} % Courriel de l'élève
+
+% This is an example, for a report with several students as authors
+%\def\reportAuthor{Jon Snow\\ Samwell Tarly}
+%\def\reportAuthorEmail{\email{jon@castleblack.com}\\ \email{tarly@casteblack.com}} % Courriel de l'élève
+
+\def\reportAuthorAddress{AuthorAddress} % Adresse de l'élève
+\def\reportAuthorCity{AuthorCity} % Adresse (cont.) de l'élève
+\def\reportAuthorPhone{AuthorPhone} % Téléphone de l'élève
+
+%\def\reportIndustrialSupervisor{Eddard Stark} % Prénom Nom de l'encadrant industriel
+\def\reportSupervisor{SupervisorName} % Prénom Nom de l'encadrant industriel (en entreprise ou laboratoire)
+\def\reportAcademicSupervisor{AcademicSupervisorName} % Prénom Nom de l'encadrant académique
+
+% For PIDR ?
+%\def\reportSupervisor{Eddard Stark} % Prénom Nom de l'encadrant industriel
+%\def\reportProjectCustomer{Projet réalisé pour l'équipe Night's Watch du laboratoire HBO}
+
+\def\reportCompany{CompanyName} % Nom de l'entreprise d'accueil
+\def\reportCompanyAddress{CompanyAddress}  % Adresse de l'entreprise
+\def\reportCompanyCity{CompanyCity} % Adresse (cont.) de l'entreprise
+\def\reportCompanyPhone{CompanyPhone} % Téléphone de l'entreprise
+\def\reportCompanyLogoPath{figures/anonymous_company-logo} % Logo de l'entreprise -- comment this definition to remove company logo
+%\def\reportSecondCompanyLogoPath{figures/logo.png} % Deuxième logo d'entreprise si besoin
+
+\def\place{SignaturePlace} % Ville pour la signature pour l'engagement anti-plagiat
+\def\date{\today} % Date pour la signature de l'engagement anti-plagiat
+
+\begin{document}
+
+    \input{chapters/glossary}
+
+    \maketitle
+    \pagenumbering{roman}
+
+    \insertAntiPlagiarismAgreement{AuthorLastName, AuthorFirstName}{AuthorStudentNumber}{figures/anonymous_company-logo}{0.3}
+    % {Nom, Prénom}{n°étu}{image signature}{scale signature}
+% You may insert several agreement in case of multiple authors
+%\insertAntiPlagiarismAgreement{Tarly, Samwell}{2014031142}{figures/anonymous_company-logo}{0.2}
+
+    \cleardoublepage
+
+    \makesecondtitle
+
+    \input{chapters/remerciements}
+
+    \input{chapters/avant-propos}
+
+    \renewcommand{\baselinestretch}{0.5}\normalsize
+    \tableofcontents
+    \renewcommand{\baselinestretch}{1.0}\normalsize
+    \cleardoublepage
+
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
+
+    \cite{ArticleExample}
+
+    \input{chapters/introduction}
+
+    \input{chapters/presentation_entreprise}
+
+    \input{chapters/missions}
+
+    \input{chapters/conclusion}
+
+    \renewcommand{\tocbibname}{Bibliographie / Webographie}
+    \bibliography{main} % See main.bib
+    \bibliographystyle{plain}
+
+    \cleardoublepage
+
+    \listoffigures
+    \cleardoublepage
+
+    \lstlistoflistings
+    \cleardoublepage
+
+    \printglossaries
+
+    \cleardoublepage
+
+    \input{chapters/annexes}
+
+    \input{chapters/resume_abstract}
+
+\end{document}
