@@ -82,7 +82,7 @@
 
 \RequirePackage{tabularx}
 \RequirePackage{titlesec}
-\RequirePackage[colorlinks,linkcolor=black,citecolor=black,pagebackref,linktocpage=true]{hyperref}
+\RequirePackage[colorlinks,linkcolor=black,citecolor=black,pagebackref,linktocpage=true,linktoc=all]{hyperref}
 \RequirePackage{acronym}
 
 
